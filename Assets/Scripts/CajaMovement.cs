@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CajaMovement : MonoBehaviour
 {
-    public float speed = -1;
+    public float speed = -2;
+    public float aceleracion = -0.005f;
     
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,6 @@ public class CajaMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(0, speed * Time.deltaTime, 0);
+        speed = aceleracion + speed;
     }
 }
